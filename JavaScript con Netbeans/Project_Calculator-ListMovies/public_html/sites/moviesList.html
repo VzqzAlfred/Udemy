@@ -5,12 +5,7 @@
         <title>Lista de Películas</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <style>
-            *{
-                margin: 0;
-                box-sizing: border-box;
-            }
-            
+        <style>
             body{
                 background-color: lightblue;
             }
@@ -19,11 +14,40 @@
                 text-align: center;
                 color: lightslategray
             }
+            
+            h2{
+                color: lightcoral;
+                margin: 0.5em 2.5rem;
+            }
+            
+            label{
+                font-size: 1.2em;
+                margin: 0 4rem;
+            }
+            
+            input{
+                border-radius: 2.5em;
+                font-size: 1rem;
+                margin: 1.5rem 4rem; 
+            }
         </style>
     </head>
     <body>
         <h1>Lista de Películas :D</h1>
         
+        <h2>Aquí puedes listar tus películas favoritas :D</h2>
+        
+        <label>Ingrese el nombre de cualquier película: 
+            <input type="text" onchange="agregarPelicula(this)">
+        </label>
+        
+        <div id="catalogo"></div>
+        
+        <label>Ingrese el nombre de su película para ver su número: 
+            <input type="text" onchange="buscarPelicula(this)">
+        </label>
+        
+        <div id="busqueda"></div>
         
         <a href="../index.html">Regresar</a>
         <script src="../js/scriptMovie.js"></script>
