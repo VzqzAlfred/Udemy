@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicios 2</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            h1{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Manejo de Variables, Datos, Funciones, Operaciones y de HTML con JavaScript</h1>
+        <script src="js/script.js"></script>
+        
+        <button onclick="myFunction1()">Press Function 1</button>
+        <button onclick="myFunction2()">Press Function 2</button>
+        <br>
+        
+        <label>Type Your name :D </label>
+        <!--This en onchange es para que se ejecute la funcion y se reciba el argumentos-->
+        <input type="text" onchange="mostrarName(this)">
+        
+        <!--Manejo de HTML y JavaScript-->
+        <h2 style="text-align: center">Manejo de tipos de HTML & JavaScript</h2>
+        <label>Propirciona tu nombre: </label>
+        <input type="text" onchange="showName(this)"/>
+        <div id="resultado"></div>
+        
+        <br><br>
+        <!--Alcance de Variables Globales y Locales-->
+        <h2 style="text-align: center">Alcance de Variables Globales y Locales</h2>
+        <label>Proporciona tu nombre y da enter: </label>
+        <input type="text" onchange="saludar(this)"/>
+        <p id="gretting"></p>
+        <input type="button" onclick="variableLocal()" value="Press variable Local">
+        <input type="button" onclick="variableGlobal()" value="Press variable Global">
+    </body>
+</html>

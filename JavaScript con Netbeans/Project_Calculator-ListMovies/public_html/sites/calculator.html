@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculadora</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            
+
+            body{
+                background-color: lightblue;
+            }
+
+            h1{
+                text-align: center;
+                color: lightslategray
+            }
+            
+            .container{
+                margin: .85em;
+            }
+            
+            span{
+                margin: 3em;
+                font-size: 1.5em;
+            }
+            
+            a{
+                margin: 5rem; 
+            }
+            
+            button{
+                border-radius: 2.2rem;
+                color: #989;
+                background-color: bisque;
+                font-size: 1.2em;
+                margin: 1rem 1.2em;;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Calculadora :D</h1>
+
+        <span>Seleccione la operación que quisiera realizar</span>
+        <div class="container">
+            <button class="item" onclick="suma()">Suma</button>
+            <button class="item" onclick="resta()">Resta</button>
+            <button class="item" onclick="mult()">Multiplicación</button>
+            <button class="item" onclick="div()">División</button>
+        </div>
+        
+        <div id="inputs"></div>
+        
+        <a href="../index.html">Regresar</a>
+
+        <script src="../js/scriptCalculator.js"></script>
+    </body>
+</html>

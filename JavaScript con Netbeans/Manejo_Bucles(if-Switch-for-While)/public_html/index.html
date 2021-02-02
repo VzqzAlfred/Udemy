@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Manejo de Bucles</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            h1{
+                text-align: center;
+            }
+            
+            p{
+                color:orange;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Uso del if</h1>
+        <label for="edad">Ingresa tu edad: </label>
+        <input type="text" name="edad" onchange="functionAge(this)">
+        <div>
+            <p>La clasificación de acuerdo a tú edad es: <i id="resultAge"></i></p>
+        </div>
+        <br><br>
+        
+        <h1>Programa para determinar el día de la fecha seleccionada 'Switch'</h1>
+        <label for="date">Selecciona una fecha: </label>
+        <input type="date" name="date" onchange="determinarDia(this)">
+        <br>
+        <div><p id="resultFecha"></p></div>
+        <br><br><br>
+        
+        
+        
+        <h1>Ciclo for</h1>
+        <h2>Impresión de los primeros 10 números</h2>
+        <button onclick="randomNumbers()">Start</button>
+        <button onclick="deleteNumbers()">Clean</button>
+        <div id="resultFor"></div>
+        <br><br>
+        
+        
+        
+        <h1>Ciclo While</h1>
+        <h2>Impresión de los números pares</h2>
+        <button onclick="showNumbers()">Start</button>
+        <button onclick="borrarNumbers()">Clean</button>
+        <div id="resultWhile"></div>
+        <br><br>
+        
+        
+        <h1>Mejo de arreglos</h1>
+        <h2>Impresión de los números pares</h2>
+        <button onclick="showArray()">Start</button>
+        <button onclick="borrarArray()">Clean</button>
+        <div id="resultArray"></div>
+        <br><br>
+        
+        
+        <script src="js/script.js"></script>
+    </body>
+</html>

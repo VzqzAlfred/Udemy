@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Matrices y Funciones</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            h1{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>     
+        <h1>Mejo de Matrices</h1>
+        <button onclick="manejoMatriz()">Start</button>
+        <button onclick="borrarMatriz()">Clean</button>
+        <div id="resultMatriz"></div>
+        <br><br>
+        
+        
+        <h1>FUNCIONES: Factorial</h1>
+        <label>Ingrese un número cualquiera que quisiera realizarle su factorial '!': </label>
+        <input type="text" onchange="numberfactorial(this)">
+        <div><p id="resultFactorial"></p></div>
+        <br><br>
+        
+        <h1>FUNCIONES: Serie de Fibonacci</h1>
+        <label>Ingrese hasta que hasta que elemento de la Serie de Fibonacci quiere ver:</label>
+        <input type="text" onchange="numberFibonacci(this)">
+        <button onclick="limpiarFibonacci()">Clean</button>
+        <div><p id="resultFibonacci"></p></div>
+        
+        
+        <script src="js/script.js"></script>
+    </body>
+</html>
