@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Formulario</title>
+</head>
+<body>
+    <form name="form1" action="/recursoEnServidor" method="post" onsubmit="return validarForma(this)">
+
+        <input type="hidden" name="oculto" value="valorOculto">
+
+        <table width="200" id="one-column-emphasis">
+            <caption>
+                FORMULARIO REGISTRO
+            </caption>
+            <tr>
+                <td class="once-first">
+                    Usuario: (*)
+                </td>
+                <td>
+                    <input class="default" type="text" name="usuario" placeholder="Escribir usuario" onfocus="this.select();">
+                </td>
+            </tr>
+            <tr>
+                <td class="once-first">
+                    Password: (*)
+                </td>
+                <td>
+                    <input class="default" type="password" name="password" onfocus="this.select();">
+                    </td>
+            </tr>
+            <tr>
+                <td class="once-first">
+                    Tecnologías de Interés: (*)
+                </td> 
+                <td>
+                    JavaScript<input type="checkbox" name="tecnologia" value="java">                        
+                    
+                    &nbsp;&nbsp;&nbsp;
+                    
+                    Node.js<input type="checkbox" name="tecnologia" value="node">
+                    
+                    &nbsp;&nbsp;&nbsp;
+                    
+                    React<input type="checkbox" name="tecnologia" value="react">
+                </td>
+            </tr>
+            <tr>
+                <td class="once-first">
+                    Género: (*)     
+               </td>
+                <td>
+                    Hombre <input type="radio" name="genero" value="H">
+
+                    Mujer <input type="radio" name="genero" value="M">
+                </td>    
+            </tr>
+            <tr>
+                <td class="once-first">
+                    Ocupación: (*)
+                </td>
+                <td>
+                    <select name="ocupacion" class="default">
+                        <option value="">Seleccionar</option>
+                        <option value="1">Profesor</option>
+                        <option value="2">Ingeniero</option>
+                        <option value="3">Jubilado</option>
+                        <option value="4">Otro</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="once-first">
+                    Música Favorita:  
+                </td>
+                <td>
+                    <select name="musica" multiple class="default">
+                        <option value="rock">Rock</option>
+                        <option value="pop">Pop</option>
+                        <option value="salsa">Salsa</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="once-first">
+                    Comentarios:
+                </td>
+                <td>
+                    <textarea name="comentarios" cols="30" rows="2" class="default" onfocus="this.select();" placeholder="Escribe un texto"></textarea>
+                </td>
+            </tr>
+            <tr style="text-align: center;">
+                <td>
+                    <input type="reset" value="Limpiar" class="default">
+                </td>
+                <td>
+                    <input type="submit" value="Enviar" class="default">
+                </td>
+            </tr>
+    </table>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
