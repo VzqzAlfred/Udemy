@@ -37,19 +37,19 @@ class Person{
         return this._edad = edad;
     }
 
-    aboutPeople(){
-        return `${this._idPersona} with name: '${this._nombre} ${this._apellido}' and ${this._edad} years.`;
-    }
-
     toString(){
-        return `${this.aboutPeople()}`
+        return `${this._idPersona}: name: ${this._nombre} ${this._apellido} is ${this._edad}`
     }
 }
 
 
+
 class Empleado extends Person{
-    constructor(idEmpleado, sueldo){
-        this._idEmpleado = idEmpleado;
+    static contadorEmpleados = 0;
+
+    constructor(nombre, apellido, edad, sueldo){
+        super(nombre, apellido, edad)
+        this._idEmpleado = ++Empleado.contadorEmpleados;
         this._sueldo = sueldo;
     }
 
@@ -64,16 +64,20 @@ class Empleado extends Person{
         return this._sueldo = sueldo;
     }
 
-    aboutPeople(){
-        return `${this._idEmpleado} win $${this._sueldo} dolars.`;
+    toString(){
+        return `${super.toString()} ${this._idEmpleado} win $${this._sueldo} dolars.`;
     }
 }
 
 
 
 class Cliente extends Person{
-    constructor(idCliente, fechaRegistro){
-        this._idCliente = idCliente;
+    
+    static contadorCliente = 0;
+
+    constructor(nombre, apellido, edad, fechaRegistro){
+        super(nombre, apellido, edad)
+        this._idCliente = ++Cliente.contadorCliente;
         this._fechaRegistro = fechaRegistro;
     }
 
@@ -82,14 +86,14 @@ class Cliente extends Person{
     }
 
     get getfechaRegistro(){
-        return this._edad;
+        return this._fechaRegistro;
     }
     set setfechaRegistro(newfecha){
         return this._fechaRegistro = newfecha;
     }
 
-    aboutPeople(){
-        return `${this._idCliente} entered to job the ${this._fechaRegistro}`;
+    toString(){
+        return `${super.toString()} ${this._idCliente} entered to job the ${this._fechaRegistro}`;
     }
 }
 
@@ -97,3 +101,10 @@ class Cliente extends Person{
 let p = new Person("Eddie", "Bruck", "25");
 console.log(p._idPersona);
 console.log(p.toString());
+
+
+let empleado1 = new Empleado("Annie", "White", 28, 5000);
+console.log(empleado1.toString());
+
+let c = new Cliente("Hugie", "Kawald", 27, new Date().toLocaleDateString());
+console.log(c.toString());
