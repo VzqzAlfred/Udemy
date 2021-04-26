@@ -23,7 +23,8 @@ class  DispositivoEntrada{
 
 class Raton extends DispositivoEntrada{
     static contadorRatones = 0;
-    constructor(){
+    constructor(tipoEntrada, marca){
+        super(tipoEntrada, marca);
         this._idRaton = ++Raton.contadorRatones;
     }
 
@@ -32,7 +33,7 @@ class Raton extends DispositivoEntrada{
     }
 
     toString(){
-        return `${this._idRaton}`
+        return `Raton: ${this._idRaton}, tipo entrada: ${this._tipoEntrada}, marca: ${this._marca}`
     }
 }
 
@@ -40,8 +41,9 @@ class Raton extends DispositivoEntrada{
 
 class Teclado extends DispositivoEntrada{
     static contadorTeclados = 0;
-    constructor(){
-        this._idTeclado = ++Raton.contadorTeclados;
+    constructor(tipoEntrada, marca){
+        super(tipoEntrada, marca);
+        this._idTeclado = ++Teclado.contadorTeclados;
     }
 
     get getidTeclado(){
@@ -49,7 +51,7 @@ class Teclado extends DispositivoEntrada{
     }
 
     toString(){
-        return `${this._idTeclado}`
+        return `Teclado: ${this._idTeclado} tipo de entrada: ${this._tipoEntrada}, marca: ${this._marca}`;
     }
 }
 
@@ -66,70 +68,28 @@ class Monitor{
         return this._idMonitor;
     }
 
-    get getMarca(){
-        return this._marca;
-    }
-    set setMarca(newMarca){
-        return this._marca = newMarca;
-    }
-
-    get getTamanio(){
-        return this._tamanio;
-    }
-    set setTamanio(newTamanio){
-        return this._tamanio = newTamanio;
-    }
-
     toString(){
-        return `${this._idMonitor}: marca:${this._marca} y tamaño: ${this._tamanio}`;
+        return `Monitor: ${this._idMonitor}: marca: ${this._marca} y tamaño: ${this._tamanio}`;
     }
 }
 
 
 class Computadora{
     static contadorComputadoras = 0;
-    constructor(nombre, monitor, teclado, raton){
+    constructor(nombre, monitor, raton, teclado){
         this._idComputadora = ++Computadora.contadorComputadoras;
         this._nombre = nombre;
         this._monitor = monitor;
-        this._teclado = teclado;
         this._raton = raton;
+        this._teclado = teclado;
     }
 
     get getidComputadora(){
         return this._idComputadora;
     }
 
-    get getNombre(){
-        return this._nombre;
-    }
-    set setNombre(newNombre){
-        return this._nombre = newNombre;
-    }
-
-    get getMonitor(){
-        return this._monitor;
-    }
-    set setMonitor(newMonitor){
-        return this._monitor = newMonitor;
-    }
-
-    get getTeclado(){
-        return this._teclado;
-    }
-    set setTeclado(newTeclado){
-        return this._teclado = newTeclado;
-    }
-
-    get getRaton(){
-        return this._raton;
-    }
-    set setRaton(newRaton){
-        return this._raton = newRaton;
-    }
-
     toString(){
-        return `${this._idComputadora}: Nombre: ${this._nombre} usando un monitor ${this._monitor}, teclado: ${this._teclado} y un raton ${this._raton}`;
+        return `Computadora: ${this._idComputadora}: Nombre: ${this._nombre} \n Usando un ${this._monitor}, \n ${this._teclado} \n ${this._raton}`;
     }
 }
 
@@ -138,6 +98,57 @@ class Orden{
     static contadorOrdenes = 0;
     constructor(){
         this._idOrden = ++Orden.contadorOrdenes;
-        this._idComputadoras = []
+        this._computadoras = [];
+    }
+
+    get getidOrden(){
+        return this._idOrden;
+    }
+
+    agregarComputadora(computadora){
+        this._computadoras.push(computadora)
+    }
+
+    mostrarOrden(){
+        let computadorasOrden = '';
+        for (let computadora of this._computadoras) {
+            computadorasOrden += `\n${computadora}`
+        }
+
+        console.log(`Orden: ${this._idOrden}, Computadoras: ${computadorasOrden}`);
     }
 }
+
+let r1 = new Raton('USB', 'HP');
+console.log(r1.toString());
+let r2 = new Raton('Bluetooth', "Dell");
+r2.setMarca = 'HP';
+console.log(r2.toString());
+
+let t1 = new Teclado('Bluetooth', "MSI");
+let t2 = new Teclado('USB', 'Acer');
+console.log(t1.toString());
+console.log(t2.toString());
+
+let m1 = new Monitor('HP', 15);
+let m2 = new Monitor('Dell', 27);
+console.log(m1.toString());
+console.log(m2.toString());
+
+let c1 = new Computadora('HP', m1, r1, t1);
+console.log(`${c1}`);
+let c2 = new Computadora('Armada', m2, r2, t2);
+console.log(`${c2}`);
+console.log(`\n\n`);
+
+let orden1 = new Orden();
+orden1.agregarComputadora(c1);
+orden1.agregarComputadora(c2);
+orden1.agregarComputadora(c2);
+orden1.mostrarOrden();
+console.log(`\n`);
+
+let orden2 = new Orden();
+orden2.agregarComputadora(c2);
+orden2.agregarComputadora(c1);
+orden2.mostrarOrden();
