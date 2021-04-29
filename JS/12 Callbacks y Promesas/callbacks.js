@@ -29,6 +29,11 @@ setTimeout(() => {
 
 
 // Uso de setInterval()
+
+const time  = () => {
+    let time = new Date().toLocaleTimeString();
+    return time;
+}
 setInterval(() => {
-   console.log(new Date().toLocaleTimeString()); 
+   console.log(time());
 }, 1000);
