@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos de eventos</title>
+</head>
+<body onload="entrar()">
+    <h1 id="title" onmouseout="verde(this)" onmouseover="rojo(this)">Hola</h1>
+    <br>
+    <div id="mostrar"></div>
+    <br><br>
+
+    Nombre:
+    <input type="text" onchange="convertir(this)">
+    <br><br>
+
+    <h2 id="subtitle" onmousedown="blue()" onmouseup="pink()" onclick="yellow(this)">Subtítulo</h2>
+    <br><br>
+
+    Apellido
+    <input type="text" onfocus="cambiar(this)" onblur="regresar(this)">
+    <br><br>
+
+    Edad
+    <input type="text" onfocus="cambiar(this)" onblur="regresar(this)">
+
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
