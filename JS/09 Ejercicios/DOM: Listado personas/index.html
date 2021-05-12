@@ -7,11 +7,18 @@
     <link rel="stylesheet" href="css/original.css">
     <title>Listado de personas</title>
 </head>
-<body>
-    <div class="contener" id="cabecero">
+<body onload="mostrarPersonas()">
+    <div class="contenedor" id="cabecero">
         <h1>Listado de personas</h1>
     </div>
 
+    <div class="contenedor">
+        <div class="elemento">
+            <ul id="personas"></ul>
+        </div>
+    </div>
+
+    
     <script src="js/person.js"></script>
     <script src="js/script.js"></script>
 </body>
