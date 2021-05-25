@@ -1,3 +1,3 @@
 * tsc nameFile.ts
-* tsc init
+* tsc -init
 * tsc -w
