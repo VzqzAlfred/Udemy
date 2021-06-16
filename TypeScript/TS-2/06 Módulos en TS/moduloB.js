@@ -1,0 +1,11 @@
+"use strict";
+exports.__esModule = true;
+var moduloA_1 = require("./moduloA");
+var moduloA_2 = require("./moduloA");
+var paquete = require("./moduloA");
+console.log(moduloA_1.nombre);
+var humano = { name: "Sam" };
+moduloA_1.show();
+paquete.show();
+var person = new moduloA_2["default"]("Lyly", "Potter", 35);
+person.info();
