@@ -1,0 +1,15 @@
+doctype html 
+html 
+    head 
+        title #{name}
+        meta(charset="UTF-8")
+        link(rel="stylesheet", href="/style.css")
+
+    body
+        main 
+            h1 #{name}
+            figure 
+                img(src=data.image, width=750)
+                figcaption By: 
+                    i #{data.author}
+            a(href="/") Return!
