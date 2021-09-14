@@ -1,5 +1,6 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from './Assets/img/logo.svg';
+import './Assets/CSS/App.css';
+import MyComponent from './Components/MyComponent';
 
 const greeting = name => {
      let present = <h3>Hi {name}</h3>;
@@ -19,14 +20,8 @@ function App() {
                greeting("user")
           }
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+
+        <MyComponent />
       </header>
     </div>
   );
