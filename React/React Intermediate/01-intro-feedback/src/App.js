@@ -7,6 +7,8 @@ function App() {
       <main className="App-header">
            <h1>Feedback with React 🙂</h1>
         <img src={logo} className="App-logo" alt="logo" />
+
+        
       </main>
     </div>
   );
