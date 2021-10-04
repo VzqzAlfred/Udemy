@@ -1,14 +1,20 @@
 import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
 
-const ChildrenComponent = ({thing, color}) => {
+
+const ChildrenComponent = ({color}) => {
+     const [fruit, setFruit] = useState("Watermelon");
+
+     // setFruit("Watermelon");
 
      return (
           <div>
-               <h4>Type a fruit: {thing} with color {color}</h4>
+               <h4>Type a fruit's name: {fruit} with color {color}</h4>
           </div>
      );
 }
+
 
 
 function App() {
@@ -19,7 +25,7 @@ function App() {
            <h1>Feedback with React 🙂</h1>
         <img src={logo} className="App-logo" alt="logo" />
 
-          <ChildrenComponent thing="Watermelon" color="Brown" />
+          <ChildrenComponent color="Brown" />
 
       </main>
     </div>
