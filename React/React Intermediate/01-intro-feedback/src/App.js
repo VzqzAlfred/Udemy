@@ -1,11 +1,33 @@
 import logo from './logo.svg';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 
-const ChildrenComponent = ({color}) => {
-     const [fruit, setFruit] = useState("Watermelon");
+class MyFirstInput extends React.Component{
 
+     constructor(props){
+          super(props);
+          // console.log(this);
+          this.state = {
+               name : "Madds",
+               age: 2
+          };
+     }
+
+     render(){
+          // console.log(this.state);
+          const { name, age } = this.state;
+          return(
+               <div>
+                    Hi {name}, he's {age} years.
+               </div>
+          );
+     }
+}
+
+
+const ChildrenComponent = ({color}) => {
+     const [fruit] = useState("Watermelon");
      // setFruit("Watermelon");
 
      return (
@@ -27,6 +49,7 @@ function App() {
 
           <ChildrenComponent color="Brown" />
 
+          <MyFirstInput />
       </main>
     </div>
   );
