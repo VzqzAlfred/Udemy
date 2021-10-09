@@ -1,5 +1,22 @@
 import './App.css';
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+
+const ExampleState = () => {
+
+     const [name, setName] = useState("");
+     const [age] = useState("");
+     const [, setSomething] = useState("Hey");
+
+     const handleHeyClic = () => setName("Orange");
+
+     return (
+          <div className="App">
+               <h2>Hi {name}</h2>
+               <p>{age}</p>
+               <button onClick={handleHeyClic}>Hey!</button>
+          </div>
+     );
+} 
 
 function App() {
      
@@ -22,6 +39,7 @@ function App() {
      }
 
   return (
+       <>
     <div className="App App-header">
          
          <form onSubmit={ handleFormSubmit }>
@@ -35,7 +53,13 @@ function App() {
 
               <button type="submit">Send</button>
          </form>
+
+
     </div>
+         
+         <hr />
+         <ExampleState />
+         </>
   );
 }
 

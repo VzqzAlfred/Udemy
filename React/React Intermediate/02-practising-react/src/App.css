@@ -9,6 +9,12 @@ h2 {
   text-align: center;
 }
 
+.App {
+  background-color: #282c34;
+  color: #fff;
+  font-size: calc(10px + 2vmin);
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -21,10 +27,7 @@ h2 {
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
-  font-size: calc(10px + 2vmin);
-  color: white;
   display: flex;
 }
 
