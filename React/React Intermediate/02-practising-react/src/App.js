@@ -1,5 +1,6 @@
 import './App.css';
 import React, { useState } from 'react';
+import LifeCycleComponent from './Components/LifeCycleComponente';
 
 const ExampleState = () => {
 
@@ -9,6 +10,7 @@ const ExampleState = () => {
 
      const handleHeyClic = () => setName("Orange");
 
+     <LifeCycleComponent />
      return (
           <div className="App">
                <h2>Hi {name}</h2>
@@ -55,10 +57,17 @@ function App() {
          </form>
 
 
-    </div>
          
+    </div>
+    <div className="App">
          <hr />
          <ExampleState />
+
+         <hr />
+
+         <LifeCycleComponent />
+         
+    </div>
          </>
   );
 }
