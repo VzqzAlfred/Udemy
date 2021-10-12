@@ -4,7 +4,7 @@ class LifeCycleComponent extends React.Component {
 
      constructor(props){
           super(props);
-          console.log("Constructor");
+          // console.log("Constructor");
 
           this.state = {
                name: ""
@@ -12,11 +12,11 @@ class LifeCycleComponent extends React.Component {
      }
 
      componentDidMount(){
-          console.log("Did mount");
+          // console.log("Did mount");
      }
 
      componentDidUpdate(){
-          console.log("Did update");
+          // console.log("Did update");
      }
 
 
@@ -25,7 +25,7 @@ class LifeCycleComponent extends React.Component {
      }
 
      getSnapshotBeforeUpdate( prevProps, prevState ){
-          console.log(prevProps, prevState);
+          // console.log(prevProps, prevState);
      }
 
 
