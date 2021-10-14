@@ -1,12 +1,13 @@
 import './App.css';
 import React, { useState } from 'react';
 import LifeCycleComponent from './Components/LifeCycleComponente';
+import HookUseEffect from './Components/HookUseEffect';
 
 const ExampleState = () => {
 
      const [name, setName] = useState("");
      const [age] = useState("");
-     const [, setSomething] = useState("Hey");
+     // const [, setSomething] = useState("Hey");
 
      const handleHeyClic = () => setName("Orange");
 
@@ -64,8 +65,10 @@ function App() {
          <ExampleState />
 
          <hr />
-
          <LifeCycleComponent />
+
+         <hr />
+          <HookUseEffect />
          
     </div>
          </>
