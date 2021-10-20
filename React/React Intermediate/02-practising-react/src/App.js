@@ -2,6 +2,7 @@ import './App.css';
 import React, { useState } from 'react';
 import LifeCycleComponent from './Components/LifeCycleComponente';
 import HookUseEffect from './Components/HookUseEffect';
+import JSONData from './Components/JSONData';
 
 const ExampleState = () => {
 
@@ -77,6 +78,10 @@ function App() {
 
          <hr />
           <HookUseEffect />
+
+          <hr /><br />
+          <JSONData />
+          <br />
          
     </div>
          </>
