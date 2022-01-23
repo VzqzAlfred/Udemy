@@ -1,7 +1,10 @@
 import React from 'react';
 
 const SearchResultsItems = () => {
-  return <div></div>;
+  return (
+  <>
+  </>
+  );
 };
 
 export default SearchResultsItems;
