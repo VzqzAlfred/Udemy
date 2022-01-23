@@ -1,0 +1,13 @@
+.containerSearch {
+  display: "flex";
+  flex-direction: "row";
+  justify-content: "center";
+}
+
+.buttonSearch {
+  padding: 0 15px;
+  font-family: "san-serif";
+  font-weight: bold;
+  outline: none;
+  font-size: 16px;
+}
