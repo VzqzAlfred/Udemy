@@ -1,12 +1,22 @@
-import SearchBox from './Components/SearchBox';
+import { useState } from "react";
+import SearchBox from "./Components/SearchBox.tsx";
+import "./Components/stylesSearches.css";
 
 const App = () => {
- return (
- <>
-     <h1>Buscador Local</h1>
-     <SearchBox />
- </>
- )
-}
+  const [isAtTop, setIsAtTop] = useState(false);
+
+  const handleCloseOpenSearch = () => setIsAtTop(!isAtTop);
+
+  return (
+    <>
+      <div className={`search ${isAtTop ? "search--top" : "search--center"}`}>
+        <SearchBox
+          onSearch={handleCloseOpenSearch}
+          onClose={handleCloseOpenSearch}
+        />
+      </div>
+    </>
+  );
+};
 
 export default App;
