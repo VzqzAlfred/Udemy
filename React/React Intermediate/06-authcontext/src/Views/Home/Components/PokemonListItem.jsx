@@ -7,7 +7,7 @@ export default function PokemonListItem({ name, url }) {
     <>
       <p>{name}</p>
       <button>
-        <Link to={`/pokemon/:${getId()}`}>See detail</Link>
+        <Link to={`/pokemon/${getId()}`}>See detail</Link>
       </button>
     </>
   );
