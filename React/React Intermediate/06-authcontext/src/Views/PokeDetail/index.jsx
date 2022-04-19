@@ -1,10 +1,13 @@
 import { useParams } from "react-router-dom";
 import { useContext } from "react/cjs/react.development";
 import { useEffect } from "react/cjs/react.development";
+import Error from "../../Components/Error";
+import { Loading } from "../../Components/Loading";
 import PokemonContext from "../../Context/Pokemon";
+import PokeStats from "./Components/PokeStats";
 export default function PokeDetail() {
   const { id } = useParams();
-  const { getPokemonDetail, pokemonDetail, isLoading } =
+  const { getPokemonDetail, pokemonDetail, isLoading, hasError, errorMessage } =
     useContext(PokemonContext);
 
   useEffect(() => {
@@ -16,14 +19,26 @@ export default function PokeDetail() {
   }, []);
 
   if (isLoading) {
-    return <p>Cargando pokemon...</p>;
+    return <Loading title="Cargando pokemon" />;
   }
 
   return (
-    <div>
-      <p>{"Name: " + pokemonDetail?.name}</p>
-      <p>{"Weight: " + pokemonDetail?.weight + " gr"}</p>
-      <p>{"Height: " + pokemonDetail?.height}</p>
-    </div>
+    <>
+      {hasError ? (
+        <Error message="Something is bad" />
+      ) : (
+        <div>
+          <h3 style={{ marginTop: 15, marginBottom: 15 }}>About the Pokemon</h3>
+
+          <p>{"Name: " + pokemonDetail?.name}</p>
+          <p>{"Weight: " + pokemonDetail?.weight + " gr"}</p>
+          <p>{"Height: " + pokemonDetail?.height}</p>
+          <div>
+            <h3 style={{ marginTop: 30, marginBottom: 15 }}>Habilities</h3>
+            <PokeStats stats={pokemonDetail?.stats ?? []} />
+          </div>
+        </div>
+      )}
+    </>
   );
 }
