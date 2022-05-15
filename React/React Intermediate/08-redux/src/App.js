@@ -1,11 +1,13 @@
+import React from "react";
 import "./App.css";
+import RoutesComponents from "./routes";
 
 function App() {
   return (
     <div className="App">
-      <div className="App-header">
-        <h1>Redux</h1>
-      </div>
+      <header className="App-header">
+        <RoutesComponents />
+      </header>
     </div>
   );
 }
