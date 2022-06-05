@@ -8,9 +8,9 @@ import Detail from "../Views/Detail";
 const RoutesComponents = () => (
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Home />}></Route>
-      <Route path="/results" element={<Results />}></Route>
-      <Route path="/detail" element={<Detail />}></Route>
+      <Route path="/" element={<Home />} />
+      <Route path="/results" element={<Results />} />
+      <Route path="/detail" element={<Detail />} />
     </Routes>
   </BrowserRouter>
 );
