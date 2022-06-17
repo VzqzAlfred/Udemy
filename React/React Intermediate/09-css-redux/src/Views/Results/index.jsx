@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import movieImages from "../../assets/movie-theater.png";
 import { useFetchMoviesQuery } from "../../Redux/API/Movies";
+import Loading from "./Components/Loading";
 
 const Results = () => {
   const { title } = useParams();
-  const [skip, setSkip] = useState(true);
   const {
     data: movies,
     isLoading,
@@ -13,17 +13,14 @@ const Results = () => {
     isFetching,
     error,
   } = useFetchMoviesQuery(title);
-  useEffect(() => {
-    setTimeout(() => {
-      setSkip(false);
-    }, 3000);
-  }, [skip]);
 
   return (
     <div className="flex flex-row w-full">
-      <div className="w-3/5"></div>
+      <div className="w-3/5 h-screen overflow-y-auto pax-10">
+        {isLoading && isFetching && <Loading />}
+      </div>
 
-      <div className="w-3/4">
+      <div className="w-2/5">
         <img
           src={movieImages}
           alt="Movies"
