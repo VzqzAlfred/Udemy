@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import movieImages from "../../assets/movie-theater.png";
 import { useFetchMoviesQuery } from "../../Redux/API/Movies";
