@@ -15,14 +15,24 @@ const Results = () => {
     error,
   } = useFetchMoviesQuery(title);
 
+  const renderContent = () => {
+    if (error) {
+      return (
+        <div className="flex items-center justify-center h-full">
+          <p className="text-xl">{error.error}</p>
+        </div>
+      );
+    } else if (isLoading || isFetching) {
+      return <Loading />;
+    } else if (isSuccess && movies?.results) {
+      return <List data={movies?.results} />;
+    }
+  };
+
   return (
     <div className="flex flex-row w-full">
       <div className="w-3/5 h-screen overflow-y-auto pax-10">
-        {isLoading && isFetching ? (
-          <Loading />
-        ) : (
-          <List data={movies?.results} />
-        )}
+        {renderContent()}
       </div>
       <div className="w-2/5">
         <img
