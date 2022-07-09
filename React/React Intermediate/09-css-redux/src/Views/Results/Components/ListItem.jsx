@@ -1,6 +1,11 @@
 import React from "react";
 
-const ListItem = ({ id, image, title }) => {
+const ListItem = ({ id, image, title, onListItemClick }) => {
+  const handleListItemClick = () => {
+    let name = "/title/";
+    if (id.includes("name")) name = "/name/";
+    onListItemClick(id.replace(`${name}`, "").replace("/", ""));
+  };
   return (
     <div
       key={id}
@@ -16,6 +21,7 @@ const ListItem = ({ id, image, title }) => {
           <button
             className="border-2 border-red-400 rounded-md w-48 h-10 text-xl text-red hover:bg-red-400 hover:text-white"
             style={{ borderColor: "#f87171", color: "#f87171" }}
+            onClick={handleListItemClick}
           >
             See more...
           </button>

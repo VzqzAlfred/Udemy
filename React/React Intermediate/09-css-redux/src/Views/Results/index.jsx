@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import movieImages from "../../assets/movie-theater.png";
 import { useFetchMoviesQuery } from "../../Redux/API/Movies";
 import List from "./Components/List";
@@ -7,6 +7,7 @@ import Loading from "./Components/Loading";
 
 const Results = () => {
   const { title } = useParams();
+  const navigate = useNavigate();
   const {
     data: movies,
     isLoading,
@@ -14,6 +15,10 @@ const Results = () => {
     isFetching,
     error,
   } = useFetchMoviesQuery(title);
+
+  const handleListItemClick = (movieId) => {
+    navigate(`/detail/${movieId}`);
+  };
 
   const renderContent = () => {
     if (error) {
@@ -25,7 +30,9 @@ const Results = () => {
     } else if (isLoading || isFetching) {
       return <Loading />;
     } else if (isSuccess && movies?.results) {
-      return <List data={movies?.results} />;
+      return (
+        <List data={movies?.results} onListItemClick={handleListItemClick} />
+      );
     }
   };
 
