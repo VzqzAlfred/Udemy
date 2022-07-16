@@ -3,14 +3,21 @@ import {
   startFetchMoviesRatings,
   successFetchMovieRatings,
   errorFetchMovieRatings,
+  startFetchMovieDetail,
+  succesFetchMovieDetail,
+  errorFetchMovieDetail,
 } from "../Actions/Movies";
 
 const initialState = {
-  isFetching: false,
+  isFetchingMovieRatings: false,
+  isFetchingMovieDetail: false,
   isLoading: true,
-  error: null,
-  succes: null,
+  erroFetchingMovieRatings: null,
+  erroFetchingMovieDetail: null,
+  succesFetchingMovieRatings: null,
+  succesFetchingMovieDetail: null,
   ratings: {},
+  movieDetail: {},
 };
 const MoviesReducers = (state = initialState, action) => {
   switch (action.type) {
@@ -18,27 +25,49 @@ const MoviesReducers = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        isFetching: true,
+        isFetchingMovieRatings: true,
       };
 
     case successFetchMovieRatings.toString():
       return {
         ...state,
         isLoading: false,
-        isFetching: false,
+        isFetchingMovieRatings: false,
         ratings: action.payload.data,
-        success: true,
-        error: null,
+        succesFetchingMovieRatings: true,
+        erroFetchingMovieRatings: null,
       };
 
     case errorFetchMovieRatings.toString():
       return {
         ...state,
         isLoading: false,
-        isFetching: false,
+        isFetchingMovieRatings: false,
         ratings: {},
-        succes: false,
-        error: action.payload.error,
+        succesFetchingMovieRatings: false,
+        erroFetchingMovieRatings: action.payload.error,
+      };
+
+    case startFetchMovieDetail.toString():
+      return {
+        ...state,
+        isFetchingMovieDetail: true,
+      };
+    case succesFetchMovieDetail.toString():
+      return {
+        ...state,
+        succesFetchMovieDetail: true,
+        errorFetchMovieDetail: null,
+        movieDetail: action.payload,
+        isFetchingMovieDetail: false,
+      };
+    case errorFetchMovieDetail.toString():
+      return {
+        ...state,
+        isFetchingMovieDetail: false,
+        succesFetchMovieDetail: false,
+        errorFetchMovieDetail: action.payload.error,
+        movieDetail: {},
       };
 
     default:
