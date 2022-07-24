@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { useState } from "react";
+import Form from "./Components/Form";
 
 const getUser = async () => {
   let url = "https://jsonplaceholder.typicode.com/todos/1";
@@ -35,6 +36,7 @@ const HandleClick = () => {
 
 function App() {
   const [show, setShow] = useState(false);
+  const [showForm, setShowForm] = useState(false);
 
   let data = [
     { name: "Jhon", age: 30 },
@@ -51,20 +53,22 @@ function App() {
       <div>
         <p>hola</p>
         <button
-          style={{
-            padding: 8,
-            fontSize: 18,
-            borderRadius: 10,
-            background: "#f0ab25",
-            color: "#654682",
-            fontWeight: "bold",
-            cursor: "pointer",
-          }}
+          className={"btn btn-outline-success btn-block"}
           onClick={() => setShow(!show)}
         >
           {show ? "Ocultar" : "Mostrar"}
         </button>
         {show && <HandleClick />}
+      </div>
+
+      <div className="mt-5">
+        <button
+          className="btn btn-warning outline-btn-block"
+          onClick={() => setShowForm(!showForm)}
+        >
+          Form
+        </button>
+        {showForm && <Form />}
       </div>
     </div>
   );
