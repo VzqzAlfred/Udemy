@@ -19,7 +19,7 @@ const Login = () => {
     <div className="row mt-5">
       <div className="col"></div>
       <div className="col">
-        <form onSubmit={SignInUser} className="form-group">
+        <form onSubmit={(e) => SignInUser(e)} className="form-group">
           <input
             className="form-control"
             placeholder="E-mail"
