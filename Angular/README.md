@@ -1,6 +1,6 @@
 # # FirstApp
 
-This projects were generated with 'Angular CLI' version 14.2.2.
+These projects were generated with 'Angular CLI' version 14.2.2.
 
 To start a new progect you should type:
 
